@@ -1,0 +1,41 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $bg;
+    color: $white;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1d1d1d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #970101;
+    border-radius: 20px;
+    border: 0.5px solid #1d1d1d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #860101a1;
+}
