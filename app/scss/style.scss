@@ -3,20 +3,19 @@
 @import "fonts";
 @import "global";
 
-
 .header {
     height: 100vh;
     width: 100%;
 }
 
 header::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .container {
@@ -26,34 +25,85 @@ header::after {
 }
 
 .header-top {
-    padding-top: 36px;
     display: flex;
     justify-content: space-between;
 }
 
 .logo {
     margin-bottom: 29px;
+    padding-top: 36px;
 }
 
 .header-btn {
+    cursor: pointer;
+    display: block;
+    position: relative;
     border: 1px solid $white;
     width: 60px;
     height: 60px;
+    margin-top: 29px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.header-btn div {
+.header-btn span {
+    position: absolute;
+    background-color: #fff;
+    left: 10px;
     width: 36px;
     height: 2px;
-    background-color: $white;
+    top: 28px;
+    transition: all 0.4s ease 0s;
+}
+
+.header-btn:before,
+.header-btn:after {
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    width: 36px;
+    height: 2px;
+    left: 10px;
+    transition: all 0.3s ease 0s;
+}
+
+.header-btn:before {
+    top: 15px;
+}
+
+.header-btn:after {
+    bottom: 15px;
 }
 
 .header-content {}
 
-.header-content__title {}
+.header-content__title {
+    font-size: 96px;
+    line-height: 112px;
+    margin-bottom: 40px;
+}
 
-.header-content__text {}
+.header-content__text {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 75px;
+    width: 500px;
+    @include Montserrat;
+}
 
-.header-content__btn {}
+.header-content__btn {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid $white;
+    padding: 30px 62px;
+    transition: all .5s;
+
+    &:hover {
+        background-color: $red;
+    }
+}
+
+
 
 
 @import "media";

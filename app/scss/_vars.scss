@@ -1,2 +1,7 @@
 $white: #ffffff;
 $bg: #0b0b0b;
+$red:#770302;
+
+@mixin Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
