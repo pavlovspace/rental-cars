@@ -88,19 +88,6 @@ header::after {
     @include Montserrat;
 }
 
-.header-content__btn {
-    text-transform: uppercase;
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid $white;
-    padding: 30px 62px;
-    transition: all .5s;
-
-    &:hover {
-        background-color: $red;
-    }
-}
-
 .statistics {
     margin: 160px 0 100px;
 }
@@ -162,7 +149,8 @@ header::after {
 
 .statistics-item__descr {
     color: #b70021;
-    font-size: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .statistics-slider {
@@ -189,17 +177,71 @@ header::after {
     .slick-dots li {
         display: inline-block;
         margin: 0 10px;
+        margin-top: 50px;
     }
-
 }
 
+.images {
+    margin-bottom: 100px;
+}
 
+.images-slider__wrap {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+}
 
+.images-slider__inner {
+    overflow: hidden;
+    min-height: 700px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    transition: all .6s;
+    border-radius: 3px;
 
+    &:hover {
+        background-color: rgba(rgb(0, 0, 0), .50);
 
+        .images-btn {
+            transform: translate(-40%, -225%);
+        }
 
+        .images-slider__inner-text {
+            transform: translate(20%, -200%);
+        }
+    }
+}
 
+.images-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: all .6s;
+    transform: translate(150%, -225%);
 
+    .btn {
+        color: #fff;
+        padding: 20px 42px;
+    }
+}
+
+.images-slider__inner-text {
+    span {
+        @include Montserrat;
+        font-size: 30px;
+    }
+
+    transition: all .6s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    font-size: 28px;
+    display: inline-block;
+    transform: translate(-150%, -200%);
+}
 
 
 

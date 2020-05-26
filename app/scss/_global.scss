@@ -17,6 +17,21 @@ body {
     font-weight: 400;
 }
 
+.btn {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid $white;
+    padding: 30px 62px;
+    transition: all .5s;
+    outline: none;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: $red;
+    }
+}
+
 a {
     color: $white;
     text-decoration: none;

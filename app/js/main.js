@@ -12,9 +12,20 @@ $(function () {
         }),
 
         $('.statistics-slider').slick({
-            dots: true,
-            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
             arrows: false,
+            fade: true,
             autoplay: 3000,
+            infinite: true,
+            dots: true,
+            asNavFor: '.images-slider'
         });
+    $('.images-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.statistics-slider',
+        arrows: false
+    });
+
 });
