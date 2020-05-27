@@ -3,6 +3,8 @@
 @import "fonts";
 @import "global";
 
+//-- header --//
+
 .header {
     height: 100vh;
     width: 100%;
@@ -88,8 +90,10 @@ header::after {
     @include Montserrat;
 }
 
+//-- statistics --//
+
 .statistics {
-    margin: 160px 0 100px;
+    margin: 120px 0 100px;
 }
 
 .statistics-img {
@@ -148,7 +152,7 @@ header::after {
 }
 
 .statistics-item__descr {
-    color: #b70021;
+    color: $red;
     font-size: 18px;
     text-transform: uppercase;
 }
@@ -171,7 +175,7 @@ header::after {
     }
 
     .slick-dots .slick-active button {
-        background-color: #b70021;
+        background-color: $red;
     }
 
     .slick-dots li {
@@ -202,7 +206,7 @@ header::after {
     border-radius: 3px;
 
     &:hover {
-        background-color: rgba(rgb(0, 0, 0), .50);
+        background-color: rgba(rgb(0, 0, 0), .6);
 
         .images-btn {
             transform: translate(-40%, -225%);
@@ -243,6 +247,146 @@ header::after {
     transform: translate(-150%, -200%);
 }
 
+//-- price --//
+
+.price {
+    background-color: #fff;
+    color: $bg;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+
+    .price__img {
+        img {
+            max-width: 570px;
+            border-radius: 3px;
+        }
+    }
+
+    .price-inner__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .price__title {
+        position: absolute;
+        top: 0;
+        line-height: 42px;
+        color: $red;
+        font-size: 36px;
+    }
+
+    .price__title--bottom {
+        position: absolute;
+        bottom: 50px;
+        right: 0;
+        top: auto;
+    }
+
+    .price__text {
+        width: 350px;
+
+        span {
+            @include Montserrat;
+        }
+    }
+
+    .price__text ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .price-descr {
+        width: 100%;
+        max-width: 570px;
+        border-bottom: 1px solid $red;
+    }
+
+    .price-descr--top {
+        border-top: 1px solid $red;
+        border-bottom: none;
+    }
+}
+
+.present {
+    .present-images {
+        position: relative;
+    }
+
+    .present-images__bg {
+        width: 1200px;
+        height: 700px;
+        margin-bottom: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 3px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 5;
+        }
+
+        .present-images__item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+            z-index: 10;
+        }
+
+        .present-offers {
+            list-style-type: none;
+            text-transform: uppercase;
+            font-size: 28px;
+            text-align: center;
+            line-height: 1.5;
+        }
+    }
+
+    .present-images__item {
+        display: flex;
+    }
+
+    .present-row {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .present-row__item {
+        max-width: 570px;
+        width: 100%;
+        padding-right: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .present-row__item-num {
+        color: $red;
+        font-size: 28px;
+    }
+
+    .present-row__row__item-text {
+        @include Montserrat;
+        max-width: 450px;
+
+        span {
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+}
 
 
 @import "media";
