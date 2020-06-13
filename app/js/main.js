@@ -1,3 +1,4 @@
+// menu
 const closeBtn = document.querySelector(".close-btn");
 const menu = document.querySelector(".menu");
 
