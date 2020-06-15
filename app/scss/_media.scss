@@ -1,7 +1,7 @@
 //======== 1580px
 @media (max-width: 1580px) {
   .close-btn {
-    right: 15px;
+    right: 155px;
   }
 
   .close-btn--active {
@@ -36,14 +36,91 @@
 
   .header-content__title {
     font-size: 56px;
-    line-height: 80px;
+    line-height: 70px;
+  }
+
+  .scroll-top {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+//======== 1080px
+@media (max-width: 1080px) {
+  .title {
+    font-size: 46px;
+    line-height: 40px;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+
+  .header-content {
+    text-align: center;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-content__title {
+    font-size: 36px;
+    line-height: 38px;
+    margin-bottom: 15px;
+  }
+
+  .header-content__text {
+    display: none;
+  }
+
+  .statistics-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .statistics-item__title {
+    margin-top: 60px;
+    margin-bottom: 0px;
+  }
+
+  .statistics-img {
+    margin-bottom: 0px;
+  }
+
+  .images-slider__inner {
+    &:hover {
+      background: none;
+
+      .images-btn {
+        transform: translate(0, -225%);
+      }
+
+      .images-slider__inner-text {
+        transform: translate(0, -200%);
+      }
+    }
+  }
+
+  .images-btn {
+    transform: translate(0, -225%);
+
+    .btn {
+      background-color: $red;
+    }
+  }
+
+  .images-slider__inner-text {
+    transform: translate(0, -200%);
   }
 }
 
 //======== 720px
 @media (max-width: 720px) {
-  .header-content__text {
-    width: 296px;
+  .header-content {
+    height: 50vh;
   }
 
   .close-btn--active {
@@ -51,20 +128,15 @@
   }
 }
 
+//======== 520px
 @media (max-width: 520px) {
   .header-content__title {
-    font-size: 38px;
-    line-height: 42px;
+    font-size: 28px;
+    line-height: 34px;
   }
 
   .btn {
-    padding: 30px 40px;
-  }
-
-  .header-content__text {
-    margin-bottom: 15px;
-    line-height: 28px;
-    font-size: 22px;
+    padding: 30px 38px;
   }
 
   .menu {
@@ -81,5 +153,33 @@
 
   .close-btn--active {
     right: 245px;
+  }
+
+  .images-slider__inner-text {
+    span {
+      font-size: 22px;
+    }
+
+    font-size: 24px;
+  }
+
+  .images-btn {
+    transform: translate(0%, -135%);
+  }
+
+  .images-slider__inner-text {
+    transform: translate(0, -20%);
+  }
+
+  .images-slider__inner {
+    &:hover {
+      .images-slider__inner-text {
+        transform: translate(0, -20%);
+      }
+
+      .images-btn {
+        transform: translate(0%, -135%);
+      }
+    }
   }
 }
