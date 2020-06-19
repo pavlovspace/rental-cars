@@ -33,6 +33,7 @@ body {
     outline: none;
     border-radius: 3px;
     user-select: none;
+    cursor: pointer;
 
     &:hover {
         background-color: $red;
