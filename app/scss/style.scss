@@ -432,6 +432,11 @@ header::after {
         border-radius: 3px;
         height: 700px;
 
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
         .present-images__btn {
             z-index: 10;
             transform: translate(-150%, -50%);
@@ -541,7 +546,7 @@ header::after {
     text-transform: uppercase;
     font-size: 18px;
     @include Montserrat;
-    transition: all .6s;
+    transition: all .4s;
     padding: 15px;
 
     span {
@@ -550,7 +555,7 @@ header::after {
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         cursor: default;
-        transition: all .6s;
+        transition: all .4s;
     }
 }
 
@@ -565,8 +570,9 @@ header::after {
 .tab {
     @include Montserrat;
     padding: 35px 0 35px;
-    background-color: $red;
+    background-color: rgba(255, 255, 255, 0.05);
     display: none;
+    text-align: center;
 
     span {
         font-family: 'Roboto', sans-serif;
@@ -594,6 +600,7 @@ header::after {
     .footer-copy__items {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
         list-style-type: none;
         padding: 0;
         margin: 0;
