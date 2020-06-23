@@ -40,7 +40,6 @@ header::after {
     a:focus {
         outline: none;
         border-right: 2px solid $red;
-        border-left: 2px solid $red;
     }
 }
 
@@ -623,6 +622,136 @@ header::after {
         content: '|';
         position: absolute;
         left: -100px;
+    }
+}
+
+.popup-none {
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    background-color: $white;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.popup-content {
+    margin-top: 70px;
+    width: 70%;
+    height: 50%;
+    position: relative;
+}
+
+
+
+.form {
+    width: 100%;
+    margin: 50px auto;
+
+    .btn {
+        padding: 30px 38px;
+        background-color: $red;
+        font-size: 22px;
+
+        &:hover {
+            color: $red;
+            border: 1px solid $red;
+            background-color: rgba(119, 255, 7, 0.397);
+        }
+    }
+
+    .close {
+        color: $red;
+        border: 1px solid $red;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 3px;
+        transition: all .3s;
+
+        &:hover {
+            background-color: rgba(119, 255, 7, 0.397);
+        }
+    }
+
+    .close span {
+        position: absolute;
+        background-color: $red;
+        left: 10px;
+        width: 36px;
+        height: 2px;
+        top: 28px;
+        transition: all .3s;
+        display: none;
+    }
+
+    .close:before,
+    .close:after {
+        content: "";
+        background-color: $red;
+        position: absolute;
+        width: 36px;
+        height: 2px;
+        left: 10px;
+        transition: all .3s;
+    }
+
+    .close:before {
+        transform: translateY(13px) rotate(45deg);
+        top: 15px;
+    }
+
+    .close:after {
+        transform: translateY(-13px) rotate(-45deg);
+        bottom: 15px;
+    }
+}
+
+.input-popup,
+select,
+.textbox-n {
+    color: $red;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    background-color: transparent;
+    padding: 13px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0px solid transparent;
+    border-bottom: 1px solid $red;
+    border-radius: 3px;
+}
+
+.popup-footer {
+    text-align: center;
+    width: 300px;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 70px;
+
+    span {
+        color: $red;
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
     }
 }
 
