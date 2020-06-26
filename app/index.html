@@ -21,10 +21,10 @@
       <div class="container">
         <div class="menu__list">
           <ul>
-            <li><a href="#">Samochody</a></li>
-            <li><a href="#">Cennik</a></li>
-            <li><a href="#">Vouchery</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="#statistics">Samochody</a></li>
+            <li><a href="#price">Cennik</a></li>
+            <li><a href="#present">Vouchery</a></li>
+            <li><a class="open-popup" data-popup="open-popup">Kontakt</a></li>
           </ul>
         </div>
       </div>
@@ -33,7 +33,7 @@
     <div class="container">
       <div class="header-top">
         <div class="logo">
-          <a href="#"><img src="img/logo.png" alt="" /></a>
+          <a href="#header"><img src="img/logo.png" alt="" /></a>
         </div>
       </div>
       <div class="header-content">
@@ -44,7 +44,7 @@
           Jesteśmy dumni z tego, że możemy zaoferować ci pojazdy, które
           zapewnią ci moc wrażeń.
         </div>
-        <a href="#" class="btn"> Zobacz więcej </a>
+        <a href="#statistics" class="btn"> Zobacz więcej </a>
       </div>
       <div class="scroll-top scroll-top--hide" id="scrollTop">
         <img src="img/top.png" alt="">
@@ -52,7 +52,7 @@
     </div>
   </header>
 
-  <section class="statistics">
+  <section class="statistics" id="statistics">
     <div class="container">
       <div class="title">Samochody elektryczne</div>
       <div class="statistics-slider">
@@ -170,7 +170,7 @@
     </div>
   </section>
 
-  <section class="images">
+  <section class="images" id="images">
     <div class="container">
       <div class="images-slider">
         <div class="images-slider__wrap" style="background-image: url(img/Mercedes.jpg);">
@@ -178,18 +178,18 @@
             <div class="images-slider__inner-text">
               wybierz <span>mercedes benz eqc</span>
             </div>
-            <div class="images-btn">
+            <div class="open-popup images-btn" data-popup="open-popup">
               <button class="btn">rezerwuj teraz</button>
             </div>
           </div>
         </div>
 
-        <div class="images-slider__wrap" style="background-image: url(img/tesla.jpg);">
+        <div class=" images-slider__wrap" style="background-image: url(img/tesla.jpg);">
           <div class="images-slider__inner">
             <div class="images-slider__inner-text">
               wybierz <span>tesla model x</span>
             </div>
-            <div class="images-btn">
+            <div class="open-popup images-btn" data-popup="open-popup">
               <button class="btn">rezerwuj teraz</button>
             </div>
           </div>
@@ -200,7 +200,7 @@
             <div class="images-slider__inner-text">
               wybierz <span>bmw i8 rodster</span>
             </div>
-            <div class="images-btn">
+            <div class="open-popup images-btn" data-popup="open-popup">
               <button class="btn">rezerwuj teraz</button>
             </div>
           </div>
@@ -209,7 +209,7 @@
     </div>
   </section>
 
-  <section class="price">
+  <section class="price" id="price">
     <div class="container">
       <div class="title">Cennik wynajmu</div>
       <div class="price-inner">
@@ -267,7 +267,7 @@
     </div>
   </section>
 
-  <section class="present">
+  <section class="present" id="present">
     <div class="container">
       <div class="title">Vouchery podarunkowe</div>
       <div class="present-images">
@@ -279,7 +279,7 @@
         </div>
         <div class="present-images__btn">
           <div class="btn-text">Formularz kontaktowy</div>
-          <button class="btn" id="popBtn">Napisz do nas</button>
+          <button class="btn open-popup" data-popup="open-popup">Napisz do nas</button>
         </div>
         <div class="present-image__text">
           Zadzwoń i zamów
@@ -308,7 +308,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <div class="container">
       <a href="" class="footer-img">
         <img src="img/big-logo.png" alt="" />
@@ -316,31 +316,46 @@
 
       <div class="footer-copy">
         <ul class="footer-copy__items">
-          <li><a href="#">Lux-rentals</a></li>
-          <li><a href="#" id="popBtn">Kontakt</a></li>
-          <li><a href="#">Cennik</a></li>
-          <li><a href="#">Samochody</a></li>
+          <li><a href="#header">Lux-rentals</a></li>
+          <li><a class="open-popup" data-popup="open-popup">Kontakt</a></li>
+          <li><a href="#price">Cennik</a></li>
+          <li><a href="#statistics">Samochody</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
-  <div class="popup-none" id="popup-none">
-    <div class="popup" id="popup">
+  <div class="popup-none" id="open-popup">
+    <div class="popup">
       <div class="popup-content">
-        <form class="form">
-          <p> <input class="input-popup" type="text" placeholder="Imię i nazwisko"></p>
-          <p> <input class="input-popup" type="text" placeholder="Adres e-mail"></p>
+        <form class="form" id="form">
+          <p> <span class="helper-text"></span>
+            <label for="inputName"></label>
+            <input class="input-popup" id="inputName" type="text" placeholder="Imię i nazwisko">
+          </p>
+          <p><span class="helper-text"></span>
+            <label for="inputMail"></label>
+            <input class="input-popup" id="inputMail" type="text" placeholder="Adres e-mail">
+          </p>
+          <span class="helper-text"></span>
           <select>
             <option value="0">wybierz samochód</option>
             <option value="1">Mercedes EQC</option>
             <option value="2">Tesla Model X</option>
             <option value="3">BMW i8 Roadster</option>
           </select>
-          <p> <input placeholder="Wynajem od*" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"></p>
-          <p><input placeholder="Wynajem do*" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"></p>
-          <button class="btn">Rezerwacja</button>
-          <div class="close" id="closeP">
+          <p>
+            <span class="helper-text"></span>
+            <label for="onDate"></label>
+            <input placeholder="Wynajem od*" class="textbox-n" type="text" onfocus="(this.type='date')" id="onDate">
+          </p>
+          <p>
+            <span class="helper-text"></span>
+            <label for="closeDate"></label>
+            <input placeholder="Wynajem do*" class="textbox-n" type="text" onfocus="(this.type='date')" id="closeDate">
+          </p>
+          <button class="btn" type="submit">Rezerwacja</button>
+          <div class="close">
             <span></span>
           </div>
         </form>
@@ -353,6 +368,14 @@
     </div>
   </div>
 
+  <div class="preloader" id="preloader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/jquery.backgroundvideo.min.js"></script>
   <script src="js/three.r95.min.js"></script>

@@ -52,14 +52,49 @@ let tab = function () {
 tab();
 
 // -- popup
-const closeP = document.querySelector("#closeP");
-const popupNone = document.querySelector("#popup-none");
-const popBtn = document.querySelector("#popBtn");
+const closePopup = document.querySelectorAll(".close");
+const popupNone = document.querySelectorAll(".popup-none");
+const openPopup = document.querySelectorAll(".open-popup");
 
-popBtn.addEventListener("click", () => {
-  popupNone.style.display = "block";
+//open popup
+openPopup.forEach(function (item) {
+  item.addEventListener("click", () => {
+    let popupName = item.getAttribute("data-popup");
+    document.getElementById(popupName).style.display = "block";
+  });
 });
 
-closeP.addEventListener("click", () => {
-  popupNone.style.display = "none";
+//close popup
+closePopup.forEach(function (item) {
+  item.addEventListener("click", () => {
+    let popup = item.closest(".popup-none");
+    popup.style.display = "none";
+  });
+});
+
+// -- preloader
+window.onload = function () {
+  let preloader = document.querySelector("#preloader");
+  preloader.style.display = "none";
+};
+
+// -- form validation
+const form = document.querySelector("#form");
+const inputName = document.querySelector("#inputName");
+const inputMail = document.querySelector("#inputMail");
+
+const helperText = {
+  loading: "Ładowanie...",
+  succes: "dziękujęmy, juź za niedługo skontaktujemy się mailowo",
+  failure: "Coś poszło nie tak...",
+};
+
+form.forEach((item) => {
+  item.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let statusMessage = document.createElement("div");
+    statusMessage.classList.add("status");
+    item.appendChild(statusMessage);
+  });
 });

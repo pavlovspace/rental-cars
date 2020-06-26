@@ -241,6 +241,22 @@
       margin-left: 0;
     }
   }
+
+  .popup-content {
+    margin-top: 10px;
+    width: 100%;
+    padding: 0 15px 0 15px;
+  }
+
+  .form {
+    .close {
+      right: 15px;
+    }
+  }
+
+  .popup-footer {
+    display: none;
+  }
 }
 
 // -- 720px
