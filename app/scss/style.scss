@@ -630,7 +630,7 @@ header::after {
 
 //-- popup --//
 .popup-none {
-    // display: none;
+    display: none;
 }
 
 .popup {
@@ -649,16 +649,33 @@ header::after {
 }
 
 .popup-content {
-    margin-top: 70px;
+    margin-top: 30px;
     width: 70%;
     height: 100%;
     position: relative;
-    overflow: auto;
 }
 
 
+.form.error span {
+    opacity: 1;
+}
+
+.form.success span {
+    opacity: 0;
+}
+
+.form.success {
+
+    .input-popup,
+    select,
+    .textbox-n {
+        border-bottom: 1px solid rgb(119, 255, 7);
+        border-left: 1px solid rgb(119, 255, 7);
+    }
+}
 
 .form {
+    position: relative;
     width: 100%;
     margin: 50px auto;
 
@@ -682,7 +699,7 @@ header::after {
         cursor: pointer;
         position: absolute;
         right: 0;
-        top: 0;
+        top: -30px;
         border-radius: 3px;
         transition: all .3s;
     }
@@ -717,6 +734,15 @@ header::after {
         transform: translateY(-13px) rotate(-45deg);
         bottom: 15px;
     }
+
+    span {
+        color: rgb(255, 0, 0);
+        text-transform: uppercase;
+        font-size: 12px;
+        position: absolute;
+        top: -20px;
+        left: 0;
+    }
 }
 
 .input-popup,
@@ -750,7 +776,7 @@ input:focus {
     text-transform: uppercase;
     font-size: 22px;
     color: #000;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 
     span {
         color: $red;

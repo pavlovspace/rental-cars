@@ -329,28 +329,29 @@
     <div class="popup">
       <div class="popup-content">
         <form class="form" id="form">
-          <p> <span class="helper-text"></span>
+          <p> <span id="error"></span>
             <label for="inputName"></label>
             <input class="input-popup" id="inputName" type="text" placeholder="Imię i nazwisko">
           </p>
-          <p><span class="helper-text"></span>
+          <p><span id="error"></span>
             <label for="inputMail"></label>
             <input class="input-popup" id="inputMail" type="text" placeholder="Adres e-mail">
           </p>
-          <span class="helper-text"></span>
-          <select>
-            <option value="0">wybierz samochód</option>
-            <option value="1">Mercedes EQC</option>
-            <option value="2">Tesla Model X</option>
-            <option value="3">BMW i8 Roadster</option>
-          </select>
+          <p><span id="error"></span>
+            <select id="select">
+              <option value="" >wybierz samochód</option>
+              <option value="1">Mercedes EQC</option>
+              <option value="2">Tesla Model X</option>
+              <option value="3">BMW i8 Roadster</option>
+            </select>
+          </p>
           <p>
-            <span class="helper-text"></span>
+            <span id="error"></span>
             <label for="onDate"></label>
             <input placeholder="Wynajem od*" class="textbox-n" type="text" onfocus="(this.type='date')" id="onDate">
           </p>
           <p>
-            <span class="helper-text"></span>
+            <span id="error"></span>
             <label for="closeDate"></label>
             <input placeholder="Wynajem do*" class="textbox-n" type="text" onfocus="(this.type='date')" id="closeDate">
           </p>
@@ -377,7 +378,6 @@
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/jquery.backgroundvideo.min.js"></script>
   <script src="js/three.r95.min.js"></script>
   <script src="js/vanta.rings.min.js"></script>
   <script src="js/libs.min.js"></script>

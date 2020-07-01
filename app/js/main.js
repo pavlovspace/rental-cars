@@ -43,9 +43,9 @@ let tab = function () {
 
   function selectTabContent(tabName) {
     tabContent.forEach((item) => {
-      item.classList.contains(tabName)
-        ? item.classList.add("is-active")
-        : item.classList.remove("is-active");
+      item.classList.contains(tabName) ?
+        item.classList.add("is-active") :
+        item.classList.remove("is-active");
     });
   }
 };
@@ -79,22 +79,82 @@ window.onload = function () {
 };
 
 // -- form validation
-const form = document.querySelector("#form");
-const inputName = document.querySelector("#inputName");
-const inputMail = document.querySelector("#inputMail");
+const form = document.getElementById("form");
+const inputName = document.getElementById("inputName");
+const inputMail = document.getElementById("inputMail");
+const select = document.getElementById("select");
+const onDate = document.getElementById("onDate");
+const closeDate = document.getElementById("closeDate");
 
-const helperText = {
-  loading: "Ładowanie...",
-  succes: "dziękujęmy, juź za niedługo skontaktujemy się mailowo",
-  failure: "Coś poszło nie tak...",
-};
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-form.forEach((item) => {
-  item.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    let statusMessage = document.createElement("div");
-    statusMessage.classList.add("status");
-    item.appendChild(statusMessage);
-  });
+  checkInputs();
 });
+
+function checkInputs() {
+  const inputNameValue = inputName.value.trim();
+  const inputMailValue = inputMail.value.trim();
+  const selectValue = select.value.trim();
+  const onDateValue = onDate.value.trim();
+  const closeDateValue = closeDate.value.trim();
+
+  if (inputNameValue === "") {
+    setErrorFor(inputName, "Wpisz swoje imię");
+  } else {
+    setSuccessFor(inputName);
+  }
+
+  if (inputMailValue === "") {
+    setErrorFor(inputMail, "Wpisz poprawny adres email");
+  } else if (!isEmail(inputMailValue)) {
+    setErrorFor(inputMail, "Wpisz poprawny adres email");
+  } else {
+    setSuccessFor(inputMail);
+  }
+
+  if (selectValue == "") {
+    setErrorFor(select, "wybierz samochód");
+  } else {
+    setSuccessFor(select);
+  }
+
+  if (onDateValue == "") {
+    setErrorFor(onDate, "Wpisz poprawną datę");
+  } else {
+    setSuccessFor(onDate);
+  }
+
+  if (closeDateValue == "") {
+    setErrorFor(closeDate, "Wpisz poprawną datę");
+  } else {
+    setSuccessFor(closeDate);
+    resetForm()
+  }
+}
+
+function setErrorFor(input, message) {
+  const formControl = input.parentElement;
+  const errorMess = formControl.querySelector("#error");
+
+  errorMess.innerText = message;
+  formControl.className = "form error";
+}
+
+function setSuccessFor(input) {
+  const formControl = input.parentElement;
+  formControl.className = "form success";
+}
+
+function isEmail(email) {
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
+}
+
+function resetForm() {
+  window.setTimeout(function () {
+    form.reset();
+    alert("dziękujęmy, juź za niedługo skontaktujemy się mailowo");
+  }, 2000);
+}

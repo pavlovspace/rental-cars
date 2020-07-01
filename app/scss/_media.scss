@@ -58,6 +58,10 @@
 
 // -- 1080px
 @media (max-width: 1080px) {
+  .popup-content {
+    overflow: auto;
+  }
+
   .title {
     font-size: 46px;
     line-height: 40px;
