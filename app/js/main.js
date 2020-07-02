@@ -8,20 +8,6 @@ let burgerClick = () => {
 };
 closeBtn.addEventListener("click", burgerClick);
 
-// -- scroll to top
-const scrollTop = document.querySelector(".scroll-top");
-
-window.onscroll = () => {
-  if (window.scrollY > 700) {
-    scrollTop.classList.remove("scroll-top--hide");
-  } else if (window.scrollY < 700) {
-    scrollTop.classList.add("scroll-top--hide");
-  }
-};
-scrollTop.onclick = () => {
-  window.scrollTo(0, 0);
-};
-
 // -- tabs
 let tab = function () {
   let tabNav = document.querySelectorAll(".tabs-nav__item"),
@@ -78,6 +64,34 @@ window.onload = function () {
   preloader.style.display = "none";
 };
 
+// -- scroll to top
+const scrollTop = document.querySelector(".scroll-top");
+let scrolled;
+let timer;
+
+window.onscroll = () => {
+  if (window.scrollY > 700) {
+    scrollTop.classList.remove("scroll-top--hide");
+  } else if (window.scrollY < 700) {
+    scrollTop.classList.add("scroll-top--hide");
+  }
+};
+scrollTop.onclick = () => {
+  scrolled = window.pageYOffset;
+  scrollToTop();
+};
+
+function scrollToTop() {
+  if (scrolled > 0) {
+    window.scrollTo(0, scrolled);
+    scrolled = scrolled - 100;
+    timer = setTimeout(scrollToTop, 20)
+  } else {
+    clearTimeout(timer);
+    window.scrollTo(0, 0)
+  }
+}
+
 // -- form validation
 const form = document.getElementById("form");
 const inputName = document.getElementById("inputName");
@@ -129,7 +143,7 @@ function checkInputs() {
     setErrorFor(closeDate, "Wpisz poprawną datę");
   } else {
     setSuccessFor(closeDate);
-    resetForm()
+    resetForm();
   }
 }
 
