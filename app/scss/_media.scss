@@ -41,7 +41,7 @@
 
   .scroll-top {
     right: 15px;
-    bottom: 15px;
+    bottom: 50px;
   }
 
   .price {
@@ -261,6 +261,13 @@
   .popup-footer {
     display: none;
   }
+
+  .scroll-top {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
 }
 
 // -- 720px
@@ -316,7 +323,7 @@
 
   .footer {
     margin-top: 50px;
-    padding: 20px 0 20px;
+    padding: 20px 0 30px;
   }
 
   .present {
@@ -373,15 +380,18 @@
     }
   }
 
-  .present-images {}
-
   .firstLi {
     display: none;
   }
 
   .footer {
     .footer-copy__items li {
-      padding-right: 50px;
+      padding-right: 10px;
     }
+  }
+
+  .scroll-top {
+    right: 5px;
+    bottom: 5px;
   }
 }
