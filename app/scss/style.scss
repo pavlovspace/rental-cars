@@ -640,6 +640,7 @@ header::after {
     width: 100%;
     height: 100%;
     z-index: 999;
+    transition: .5s;
 
     display: flex;
     justify-content: space-between;
