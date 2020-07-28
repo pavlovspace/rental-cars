@@ -93,12 +93,12 @@ function scrollToTop() {
 }
 
 // -- form validation
-const form = document.getElementById("form");
-const inputName = document.getElementById("inputName");
-const inputMail = document.getElementById("inputMail");
-const select = document.getElementById("select");
-const onDate = document.getElementById("onDate");
-const closeDate = document.getElementById("closeDate");
+const form = document.querySelector("#form");
+const inputName = document.querySelector("#inputName");
+const inputMail = document.querySelector("#inputMail");
+const select = document.querySelector("#select");
+const onDate = document.querySelector("#onDate");
+const closeDate = document.querySelector("#closeDate");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -169,6 +169,6 @@ function isEmail(email) {
 function resetForm() {
   window.setTimeout(function () {
     form.reset();
-    alert("dziękujęmy, juź za niedługo skontaktujemy się mailowo");
+    alert("Dziękujęmy, juź za niedługo skontaktujemy się mailowo");
   }, 2000);
 }
